@@ -281,6 +281,16 @@
       .hero-photo-ring { width: 160px; height: 160px; }
     }
 
+    #services { background: var(--bg); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .service-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 32px 24px; text-align: center; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; }
+    .service-card:hover { transform: translateY(-6px); border-color: rgba(91,142,247,0.3); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 18px; }
+    .service-card h3 { font-family: var(--font2); font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    .service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+
     .cursor { position:fixed;width:8px;height:8px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:9999;transition:transform 0.1s;mix-blend-mode:difference; }
     .cursor-ring { position:fixed;width:32px;height:32px;border-radius:50%;border:1px solid rgba(91,142,247,0.5);pointer-events:none;z-index:9998;transition:all 0.15s ease; }
 
@@ -303,6 +313,7 @@
   <button class="mobile-close" id="mobileClose" aria-label="Close navigation menu">&#10005;</button>
   <a href="#about" onclick="closeMobile()">About</a>
   <a href="#skills" onclick="closeMobile()">Skills</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
   <a href="#projects" onclick="closeMobile()">Projects</a>
   <a href="#education" onclick="closeMobile()">Education</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
@@ -313,6 +324,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -599,6 +611,57 @@
   </div>
 </section>
 
+<!-- SERVICES -->
+<section id="services">
+  <div style="text-align:center;max-width:600px;margin:0 auto 56px;">
+    <span class="section-label reveal">Services</span>
+    <h2 class="section-title reveal reveal-delay-1">What I Offer</h2>
+    <p class="section-sub reveal reveal-delay-2" style="margin:0 auto;">Leveraging my academic foundation and hands-on project experience to deliver practical solutions.</p>
+  </div>
+  <div class="services-grid" style="max-width:1000px;margin:0 auto;">
+    <div class="service-card reveal">
+      <div class="service-icon" style="background:rgba(91,142,247,0.12);">&#129302;</div>
+      <h3>AI / ML Development</h3>
+      <p>Building intelligent models and pipelines &mdash; from data preprocessing and feature engineering to model training, evaluation, and deployment.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon" style="background:rgba(52,211,153,0.12);">&#127760;</div>
+      <h3>Full-Stack Web Development</h3>
+      <p>Developing responsive, database-backed web applications with clean UI, CRUD operations, authentication, and reporting features.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon" style="background:rgba(167,139,250,0.12);">&#128202;</div>
+      <h3>Data Analysis &amp; Visualization</h3>
+      <p>Transforming raw data into actionable insights using Python, Pandas, Excel, and Power BI with clear dashboards and reports.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon" style="background:rgba(239,68,68,0.12);">&#128187;</div>
+      <h3>Desktop Application Development</h3>
+      <p>Creating feature-rich desktop tools with Python, C++, and Java &mdash; complete with GUI, file I/O, and system-level integrations.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon" style="background:rgba(245,158,11,0.12);">&#128451;</div>
+      <h3>Database Design &amp; Management</h3>
+      <p>Designing schemas, writing optimized queries, and managing data across SQL and NoSQL systems for reliable, performant applications.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon" style="background:rgba(6,182,212,0.12);">&#128736;</div>
+      <h3>Custom Tooling &amp; Automation</h3>
+      <p>Automating repetitive tasks, building productivity tools, and creating custom scripts to streamline workflows and save time.</p>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon" style="background:rgba(91,142,247,0.12);">&#127760;</div>
+      <h3>Website Development</h3>
+      <p>Building fast, responsive websites with modern design &mdash; from landing pages to multi-page business sites with SEO and analytics.</p>
+    </div>
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon" style="background:rgba(52,211,153,0.12);">&#128241;</div>
+      <h3>Mobile App Development</h3>
+      <p>Creating cross-platform mobile applications with intuitive interfaces, real-time data sync, and backend integration.</p>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div style="text-align:center;max-width:600px;margin:0 auto 56px;">
@@ -681,6 +744,7 @@
   <div class="footer-copy">&copy; <span id="year"></span> Nazeer Ahmed. All rights reserved.</div>
   <div class="footer-links">
     <a href="#about">About</a>
+    <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
